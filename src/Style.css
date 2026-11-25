@@ -1,0 +1,431 @@
+:root {
+  font-family: Arial, Helvetica, sans-serif;
+  color: #eef2f5;
+  background: #17191b;
+  font-synthesis: none;
+}
+
+* {
+  box-sizing: border-box;
+}
+
+body {
+  margin: 0;
+  min-width: 320px;
+  background: #17191b;
+  color: #eef2f5;
+  font-size: 14px;
+}
+
+button,
+input,
+select {
+  font: inherit;
+}
+
+.portal-shell {
+  width: min(1120px, calc(100% - 32px));
+  margin: 18px auto;
+  overflow: hidden;
+  border-radius: 7px;
+  background: #24292c;
+  box-shadow: 0 12px 34px rgba(0, 0, 0, 0.3);
+  color: #e9edf0;
+  transition: background-color 0.2s, color 0.2s;
+}
+
+.portal-header {
+  position: relative;
+  display: flex;
+  align-items: flex-end;
+  min-height: 250px;
+  padding: 22px 24px 18px;
+  overflow: hidden;
+  background-image: url("/ground-vehicles-banner.jpg");
+  background-size: cover;
+  background-position: center 46%;
+  border-bottom: 1px solid #53616d;
+}
+
+.header-shade {
+  position: absolute;
+  inset: 0;
+  background: linear-gradient(180deg, rgba(7, 14, 25, 0.04) 20%, rgba(7, 14, 25, 0.18) 57%, rgba(7, 14, 25, 0.8) 100%);
+}
+
+.header-content {
+  position: relative;
+  z-index: 1;
+  display: flex;
+  align-items: flex-end;
+  justify-content: space-between;
+  width: 100%;
+}
+
+.header-content h1 {
+  margin: 0;
+  color: #f5f7f8;
+  font-size: clamp(26px, 3vw, 34px);
+  font-weight: 700;
+  letter-spacing: -0.5px;
+  text-shadow: 0 2px 6px rgba(0, 0, 0, 0.45);
+}
+
+.header-content p {
+  margin: 4px 0 0;
+  color: #d6e0e8;
+  font-size: 12px;
+  letter-spacing: 0.08em;
+  text-transform: uppercase;
+}
+
+.header-icons {
+  display: flex;
+  gap: 18px;
+  padding: 0 2px 7px;
+  color: #f3f5f7;
+  font-size: 19px;
+}
+
+.portal-tools {
+  padding: 10px 12px 14px;
+  background: #252a2d;
+}
+
+.search-panel {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 8px;
+  align-items: center;
+  padding: 0 0 10px;
+}
+
+.search-input-wrap {
+  position: relative;
+  flex: 1 1 220px;
+  min-width: 180px;
+}
+
+.search-input-wrap i {
+  position: absolute;
+  top: 50%;
+  left: 12px;
+  z-index: 2;
+  transform: translateY(-50%);
+  color: #e0e7eb;
+}
+
+.search-input-wrap .form-control,
+.filter-select {
+  min-height: 38px;
+  border: 1px solid #454d52;
+  border-radius: 4px;
+  background-color: #3a3f43;
+  color: #f2f4f5;
+  font-size: 13px;
+  box-shadow: none;
+}
+
+.search-input-wrap .form-control {
+  padding-left: 35px;
+}
+
+.search-input-wrap .form-control::placeholder {
+  color: #aeb8bf;
+}
+
+.search-input-wrap .form-control:focus,
+.filter-select:focus {
+  border-color: #168bd0;
+  box-shadow: 0 0 0 2px rgba(22, 139, 208, 0.15);
+}
+
+.filter-select {
+  flex: 0 1 150px;
+  width: auto;
+  padding-top: 6px;
+  padding-bottom: 6px;
+  cursor: pointer;
+}
+
+.filter-select option {
+  background: #30363a;
+  color: white;
+}
+
+.results-line {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  min-height: 35px;
+  padding: 0 2px 9px;
+  color: #cbd4da;
+  font-size: 12px;
+}
+
+.results-line strong {
+  color: #ffffff;
+  font-weight: 700;
+}
+
+.mode-label {
+  padding: 5px 10px;
+  border: 1px solid #515a60;
+  border-radius: 4px;
+  background: #30373b;
+  color: #e2e8ec;
+  font-size: 11px;
+  font-weight: 700;
+}
+
+.theme-button {
+  border-color: #535c62;
+  color: #dce4e9;
+  font-size: 11px;
+}
+
+.theme-button:hover {
+  background: #3d464c;
+  color: #fff;
+}
+
+.vehicle-table-wrap {
+  border: 1px solid #465056;
+  border-bottom: 0;
+}
+
+.vehicle-table {
+  --bs-table-bg: #252d31;
+  --bs-table-color: #eef2f4;
+  --bs-table-border-color: #576167;
+  --bs-table-hover-bg: #303a40;
+  --bs-table-hover-color: #ffffff;
+  table-layout: auto;
+  min-width: 650px;
+  font-size: 12px;
+}
+
+.vehicle-table thead th {
+  padding: 9px 12px;
+  border-right: 1px solid #4d5960;
+  background: #35414a;
+  color: #dce5eb;
+  font-size: 11px;
+  font-weight: 700;
+  text-align: center;
+  white-space: nowrap;
+}
+
+.vehicle-table thead th:first-child {
+  text-align: left;
+  padding-left: 48px;
+}
+
+.vehicle-table tbody td {
+  height: 39px;
+  padding: 7px 12px;
+  border-color: #576167;
+  vertical-align: middle;
+  white-space: nowrap;
+}
+
+.vehicle-table tbody tr {
+  border-left: 4px solid #0797d8;
+}
+
+.vehicle-table tbody tr:nth-child(16) {
+  border-left-color: #d5a900;
+}
+
+.vehicle-name {
+  min-width: 220px;
+  color: #f2f5f7;
+  font-weight: 700;
+}
+
+.vehicle-mark {
+  display: inline-block;
+  width: 30px;
+  margin-right: 4px;
+  color: #ecf1f3;
+  font-size: 16px;
+  line-height: 1;
+  transform: scaleX(1.25);
+}
+
+.role-label {
+  display: inline-flex;
+  align-items: center;
+  gap: 6px;
+  font-weight: 600;
+}
+
+.role-label i {
+  font-size: 12px;
+}
+
+.role-spaa i { color: #bc87ef; }
+.role-destroyer i { color: #9cdda0; }
+.role-heavy i { color: #f06b71; }
+.role-light i { color: #d2dbe0; }
+
+.country-heading,
+.country-cell,
+.rank-cell,
+.br-cell,
+.purchase-cell {
+  text-align: center;
+}
+
+.country-cell {
+  font-size: 18px;
+  line-height: 1;
+}
+
+.rank-cell,
+.br-cell,
+.purchase-cell {
+  font-weight: 600;
+}
+
+.empty-results {
+  padding: 28px !important;
+  color: #c6d0d6 !important;
+  text-align: center;
+}
+
+.portal-footer {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+  justify-content: space-between;
+  gap: 12px;
+  padding: 14px 2px 0;
+}
+
+.welcome-area {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+  gap: 12px;
+}
+
+.introduce-button {
+  padding: 7px 13px;
+  border-color: #168bd0;
+  background: #087fbe;
+  font-size: 12px;
+}
+
+.introduce-button:hover {
+  border-color: #26a4ec;
+  background: #096ea4;
+}
+
+.welcome-text {
+  color: #dce6eb;
+  font-size: 12px;
+  font-weight: 600;
+}
+
+.fact-box {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  max-width: 460px;
+  color: #cbd5da;
+  font-size: 12px;
+}
+
+.fact-box i {
+  color: #e3c36a;
+  font-size: 16px;
+}
+
+.light-mode {
+  background: #e9eef1;
+  color: #24313a;
+}
+
+.light-mode .portal-tools {
+  background: #e9eef1;
+}
+
+.light-mode .results-line,
+.light-mode .welcome-text,
+.light-mode .fact-box {
+  color: #36454f;
+}
+
+.light-mode .results-line strong {
+  color: #1d2b34;
+}
+
+.light-mode .mode-label {
+  border-color: #bdc8ce;
+  background: #f8fafb;
+  color: #3b4b55;
+}
+
+.light-mode .vehicle-table {
+  --bs-table-bg: #f8fafb;
+  --bs-table-color: #26343d;
+  --bs-table-border-color: #c5d0d6;
+  --bs-table-hover-bg: #e5edf1;
+  --bs-table-hover-color: #17252e;
+}
+
+.light-mode .vehicle-table tbody td,
+.light-mode .vehicle-name {
+  color: #26343d;
+}
+
+.light-mode .vehicle-mark {
+  color: #34444e;
+}
+
+.light-mode .search-input-wrap .form-control,
+.light-mode .filter-select {
+  border-color: #bdc8ce;
+  background-color: #fff;
+  color: #26343d;
+}
+
+.light-mode .search-input-wrap .form-control::placeholder {
+  color: #7d8a91;
+}
+
+.light-mode .filter-select option {
+  background: #fff;
+  color: #26343d;
+}
+
+@media (max-width: 700px) {
+  .portal-shell {
+    width: calc(100% - 16px);
+    margin: 8px auto;
+  }
+
+  .portal-header {
+    min-height: 190px;
+    padding: 18px 16px;
+    background-position: center center;
+  }
+
+  .portal-tools {
+    padding: 9px 8px 12px;
+  }
+
+  .filter-select {
+    flex: 1 1 130px;
+  }
+
+  .search-input-wrap {
+    flex-basis: 100%;
+  }
+
+  .portal-footer {
+    align-items: flex-start;
+    flex-direction: column;
+  }
+}
